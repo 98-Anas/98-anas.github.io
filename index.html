@@ -160,7 +160,7 @@ var out=document.getElementById('tout'),form=document.getElementById('tform'),in
 if(!out)return;
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var C={
-help:[['m','Commands: '],['a','whoami  about  focus  now  galadyas  projects  experience  skills  certs  contact  clear']],
+help:[['m','Try: '],['a','whoami  cat about.txt  cat focus.txt  cat now.txt  ls galadyas/  ls projects/  cat experience.txt  cat skills.txt  cat certs.txt  contact  clear']],
 whoami:[['c','Anas Ayman Elgallad'],['m','  ·  Data & AI Engineer  ·  Cairo, Egypt']],
 about:[['c','Computer Engineer building end-to-end data and AI systems: ingestion, processing, model development and reliable deployment.\n'],
  ['m','I bring MLOps and DevOps practice, cloud-native tooling and High-Performance Computing to make them reproducible and production-ready.']],
@@ -194,14 +194,15 @@ function print(parts,done){var line=document.createElement('div');line.className
  (function next(){if(k>=parts.length){done&&done();return}var pt=parts[k++];
   if(pt[0]==='link'){var a=document.createElement('a');a.href=pt[1];a.textContent=pt[2];if(pt[1].indexOf('http')===0)a.rel='noopener';line.appendChild(a);next()}
   else{var s=el(pt[0],'');line.appendChild(s);typeInto(s,pt[1],next)}})()}
+function key(c){c=c.replace(/^(cat|ls|open|less|more)\s+/,'').replace(/^(\.\/|~\/)/,'').replace(/\.(txt|md|sh)$/,'').replace(/\/+$/,'');return c}
 function run(cmd,done){cmd=(cmd||'').trim().toLowerCase();var line=document.createElement('div');line.className='line';
  line.appendChild(el('p','❯ '));out.appendChild(line);var c=el('c','');line.appendChild(c);
  typeInto(c,cmd,function(){if(cmd==='clear'){out.innerHTML='';done&&done();return}
-  var r=C[cmd]||[['m','command not found: '+cmd+'. Try '],['a','help']];print(r,function(){out.appendChild(document.createElement('br'));scroll();done&&done()})})}
+  var r=C[cmd]||C[key(cmd)]||[['m','command not found: '+cmd+'. Try '],['a','help']];print(r,function(){out.appendChild(document.createElement('br'));scroll();done&&done()})})}
 function exec(cmd){if(busy){queue.push(cmd);return}busy=true;run(cmd,function(){busy=false;if(queue.length)exec(queue.shift())})}
-['whoami','about','focus','now','galadyas','projects','experience','skills','contact'].forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=function(){exec(n);inp.focus()};hint.appendChild(b)});
+['whoami','cat about.txt','cat focus.txt','cat now.txt','ls galadyas/','ls projects/','cat experience.txt','cat skills.txt','contact'].forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=function(){exec(n);inp.focus()};hint.appendChild(b)});
 form.addEventListener('submit',function(e){e.preventDefault();var v=inp.value;inp.value='';if(v.trim())exec(v)});
-var started=false;function start(){if(started)return;started=true;exec('whoami');exec('focus');exec('help')}
+var started=false;function start(){if(started)return;started=true;exec('whoami');exec('cat focus.txt');exec('help')}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){start();io.disconnect()}});io.observe(out)}else start();
 })();
 </script>
