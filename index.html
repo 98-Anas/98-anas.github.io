@@ -92,13 +92,32 @@ filter:drop-shadow(0 0 30px rgba(139,123,255,.25))}
 .reveal.in{opacity:1;transform:none}
 @media (max-width:640px){header.hero{padding:52px 0 36px}.job .when{float:none;display:block}.hero .galaxy{opacity:.3;right:-120px}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.reveal{opacity:1;transform:none;transition:none}}
+
+.term{background:#090a1c;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;
+font:14.5px/1.65 "JetBrains Mono","Cascadia Mono",Consolas,Menlo,monospace;color:#d8dcff}
+@media (prefers-color-scheme:light){.term{background:#10122a}}
+.term .bar{display:flex;align-items:center;gap:7px;padding:0 14px;min-height:40px;border-bottom:1px solid rgba(139,123,255,.15);color:#5d6390;font-size:12.5px}
+.term .bar i{width:11px;height:11px;border-radius:50%;display:inline-block;flex:none}.term .bar span{margin:0 auto;line-height:1}
+.term .out{height:300px;overflow-y:auto;padding:14px 18px 6px;scrollbar-width:thin}
+.term .line{white-space:pre-wrap;word-break:break-word}.term .p{color:#3ddc97}.term .c{color:#e8eaff}
+.term .a{color:#c9c2ff}.term .b{color:#4fd1ff}.term .m{color:#8c92bf}.term a{color:#4fd1ff}
+.term form{display:flex;gap:8px;padding:4px 18px 14px}.term input{flex:1;background:transparent;border:0;outline:0;color:#e8eaff;
+font:inherit;caret-color:#8b7bff}
+.term .hint{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 14px}
+.term .hint button{font:12px/1 inherit;font-family:inherit;color:#c9c2ff;background:rgba(139,123,255,.12);border:1px solid rgba(139,123,255,.25);
+border-radius:999px;padding:6px 10px;cursor:pointer}.term .hint button:hover{border-color:#8b7bff}
 </style></head>
 <body>
 <header class="hero"><img class="galaxy" src="assets/galaxy.svg" alt=""><div class="wrap"><div class="top"><img class="avatar" src="assets/avatar.jpg" alt="Anas Ayman Elgallad"><div><h1><span class="grad">Anas Ayman Elgallad</span></h1>
 <p class="tag">Data &amp; AI Engineer<br><span style="font-size:.82em;letter-spacing:.02em">XOps{Devops, ML, LLM, VLM, Agent} · Cloud Computing · HPC · Embedded AI</span></p><div class="status"><i></i>Learning in progress · DevOps, Data Science, Data Engineering, MLOps and IT project management</div><div class="links"><a class="primary" href="mailto:algalad.anas@gmail.com">Contact me</a><a href="https://www.linkedin.com/in/anas-ayman98" rel="me noopener">LinkedIn</a><a href="https://github.com/98-Anas" rel="me noopener">GitHub</a><a href="https://www.youtube.com/@ANAS-CE_CPR" rel="me noopener">YouTube</a></div></div></div>
 <div class="stats"><div class="stat"><b>2</b><span>open-source tools</span></div><div class="stat"><b>13</b><span>projects</span></div><div class="stat"><b>26</b><span>public repos</span></div><div class="stat"><b>11</b><span>certifications</span></div></div></div></header>
-<nav aria-label="Sections"><div class="wrap"><a href="#about">About</a><a href="#galadyas">galadyas</a><a href="#learning">Learning now</a><a href="#projects">Projects</a><a href="#community">Teaching &amp; community</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a></div></nav>
+<nav aria-label="Sections"><div class="wrap"><a href="#terminal">Terminal</a><a href="#about">About</a><a href="#galadyas">galadyas</a><a href="#learning">Learning now</a><a href="#projects">Projects</a><a href="#community">Teaching &amp; community</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a></div></nav>
 <main class="wrap">
+<section id="terminal" aria-label="Interactive terminal"><h2>Ask the terminal</h2>
+<div class="term"><div class="bar"><i style="background:#ff6b81"></i><i style="background:#ffc861"></i><i style="background:#3ddc97"></i><span>anas@galadyas: ~</span></div>
+<div class="out" id="tout" aria-live="polite"></div>
+<form id="tform" autocomplete="off"><span class="p">❯</span><input id="tin" aria-label="Type a command" placeholder="type help, or pick a command below" spellcheck="false"></form>
+<div class="hint" id="thint"></div></div></section>
 <section id="about"><h2>About</h2><p class="about">Computer Engineer with a multidisciplinary background spanning Data Analysis, Data Science, Data Engineering, and Artificial Intelligence. 
 Experienced in designing and building end-to-end data-driven systems, from data ingestion and processing to model development and scalable deployment.
 Skilled in Machine Learning and Deep Learning with practical exposure to Embedded AI and computer vision applications, alongside strong foundations in statistical analysis and feature engineering. 
@@ -117,6 +136,57 @@ Combines analytical thinking with engineering rigor to transform complex data in
 <section id="certifications"><h2>Licenses &amp; certifications</h2><div class="certs"><a class="cert" href="https://www.coursera.org/account/accomplishments/verify/5K58EOZNH23Q" rel="noopener"><div class="img"><img src="assets/certs/introduction-to-project-management-ibm-coursera.jpg" alt="Introduction to Project Management - IBM (Coursera) certificate" loading="lazy"></div><div class="txt">Introduction to Project Management - IBM (Coursera)<small>Aug 2026 · Verify →</small></div></a><a class="cert" href="https://www.coursera.org/account/accomplishments/verify/NIE0DBX8PFPN" rel="noopener"><div class="img"><img src="assets/certs/delivering-quality-work-with-agility-ibm-coursera.jpg" alt="Delivering Quality Work with Agility - IBM (Coursera) certificate" loading="lazy"></div><div class="txt">Delivering Quality Work with Agility - IBM (Coursera)<small>May 2026 · Verify →</small></div></a><a class="cert" href="https://www.linkedin.com/learning/certificates/08255a7ba2ddf55bddad0fa4e98e948bfaea36a2ab0c75f83973a7a0fbee59e1" rel="noopener"><div class="img"><img src="assets/certs/docker-foundations-professional-certificate-docker-linkedin-.jpg" alt="Docker Foundations Professional Certificate - Docker &amp; LinkedIn Learning certificate" loading="lazy"></div><div class="txt">Docker Foundations Professional Certificate - Docker &amp; LinkedIn Learning<small>Apr 2026 · Verify →</small></div></a><a class="cert" href="https://www.credly.com/badges/b01dc870-cd02-475b-9a37-2bd930bd33e8" rel="noopener"><div class="img"><img src="assets/certs/lfs162-introduction-to-devops-and-site-reliability-engineeri.jpg" alt="LFS162: Introduction to DevOps and Site Reliability Engineering - The Linux Foundation certificate" loading="lazy"></div><div class="txt">LFS162: Introduction to DevOps and Site Reliability Engineering - The Linux Foundation<small>Feb 2026 · Verify →</small></div></a><a class="cert" href="https://www.credly.com/badges/67fe4753-ac6f-4367-b226-711eb14e330c" rel="noopener"><div class="img"><img src="assets/certs/lfs101-introduction-to-linux-the-linux-foundation.jpg" alt="LFS101: Introduction to Linux - The Linux Foundation certificate" loading="lazy"></div><div class="txt">LFS101: Introduction to Linux - The Linux Foundation<small>Jan 2026 · Verify →</small></div></a><a class="cert" href="https://www.udemy.com/certificate/UC-d619783b-acb4-4fe5-8624-5534b3a9a623/" rel="noopener"><div class="img"><img src="assets/certs/devops-fundamentals-from-zero-to-practical-overview-udemy.jpg" alt="DevOps Fundamentals: From Zero to Practical Overview - Udemy certificate" loading="lazy"></div><div class="txt">DevOps Fundamentals: From Zero to Practical Overview - Udemy<small>Jan 2026 · Verify →</small></div></a><a class="cert" href="assets/certs/introduction-to-high-performance-computing-iti-mahara-tech-full.jpg" rel="noopener"><div class="img"><img src="assets/certs/introduction-to-high-performance-computing-iti-mahara-tech.jpg" alt="Introduction to High Performance Computing - ITI Mahara Tech certificate" loading="lazy"></div><div class="txt">Introduction to High Performance Computing - ITI Mahara Tech<small>Jan 2026 · View certificate →</small></div></a><a class="cert" href="assets/certs/open-source-summit-embedded-linux-conference-na-2020-certifi-full.jpg" rel="noopener"><div class="img"><img src="assets/certs/open-source-summit-embedded-linux-conference-na-2020-certifi.jpg" alt="Open Source Summit + Embedded Linux Conference NA 2020 - Certificate of Attendance (The Linux Foundation) certificate" loading="lazy"></div><div class="txt">Open Source Summit + Embedded Linux Conference NA 2020 - Certificate of Attendance (The Linux Foundation)<small>Jul 2020 · View certificate →</small></div></a><a class="cert" href="https://www.credly.com/badges/ad4e30b4-67a2-4e4e-9022-0cbf83b10a80" rel="noopener"><div class="img"><img src="assets/certs/aws-academy-graduate-cloud-architecture.jpg" alt="AWS Academy Graduate - Cloud Architecture certificate" loading="lazy"></div><div class="txt">AWS Academy Graduate - Cloud Architecture<small>Verify →</small></div></a><a class="cert" href="https://www.credly.com/badges/ca91901b-e4cc-4a9d-bc94-413ece20e320" rel="noopener"><div class="img"><img src="assets/certs/aws-academy-graduate-cloud-foundations.jpg" alt="AWS Academy Graduate - Cloud Foundations certificate" loading="lazy"></div><div class="txt">AWS Academy Graduate - Cloud Foundations<small>Verify →</small></div></a><a class="cert" href="https://www.credly.com/badges/2c9f8880-42ae-465f-b5ef-bcda1bf986dc" rel="noopener"><div class="img"><img src="assets/certs/linux-unhatched-cisco-networking-academy.jpg" alt="Linux Unhatched - Cisco Networking Academy certificate" loading="lazy"></div><div class="txt">Linux Unhatched - Cisco Networking Academy<small>Verify →</small></div></a></div></section>
 </main>
 <footer><div class="wrap"><img src="assets/galaxy-256.png" alt="">© 2026 Anas Ayman Elgallad · Updated October 2026 · No tracking, no cookies.</div></footer>
+<script>
+(function(){
+var out=document.getElementById('tout'),form=document.getElementById('tform'),inp=document.getElementById('tin'),hint=document.getElementById('thint');
+if(!out)return;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var C={
+help:[['m','Commands: '],['a','whoami  about  focus  now  galadyas  projects  experience  skills  certs  contact  clear']],
+whoami:[['c','Anas Ayman Elgallad'],['m','  ·  Data & AI Engineer  ·  Cairo, Egypt']],
+about:[['c','Computer Engineer building end-to-end data and AI systems: ingestion, processing, model development and reliable deployment.\n'],
+ ['m','I bring MLOps and DevOps practice, cloud-native tooling and High-Performance Computing to make them reproducible and production-ready, and I teach what I learn.']],
+focus:[['a','XOps{Devops, ML, LLM, VLM, Agent}'],['m','  ·  Cloud Computing  ·  HPC  ·  Embedded AI']],
+now:[['c','Data Analyst'],['m',' @ Nile University (since Jun 2026)\n'],['c','Physical AI Instructor'],['m',' @ San3a Tech (since Mar 2026)\n'],
+ ['c','Creator'],['m',' of NU Linux Bootcamp\n'],['c','Building'],['m',' the galadyas open-source series']],
+galadyas:[['b','galadyas_terminal'],['m','   one terminal workspace for Windows and Linux\n'],['a','galadyas_visionary'],['m','  polished videos from templates, on your own machine\n'],
+ ['m','open source · under development · '],['link','#galadyas','watch the films ↓']],
+projects:[['c','FlaskOps'],['m','            HA Kubernetes infrastructure · Terraform · Ansible · Grafana\n'],
+ ['c','HPC on Raspberry Pi'],['m',' MPI cluster counting stars in Hubble images\n'],
+ ['c','Lane keeping'],['m','        behavioral cloning on a 1/10-scale RC car\n'],
+ ['c','AWS landing zone'],['m','    Terraform via GitHub Actions\n'],
+ ['link','#projects','all projects ↓']],
+experience:[['c','2026  '],['m','Data Analyst, Nile University · Physical AI Instructor, San3a Tech\n'],
+ ['c','2025  '],['m','DevOps Engineer Intern, Fawry: Terraform, Docker, Kubernetes, CI/CD\n'],
+ ['c','2024  '],['m','Head of Control & Autonomous Systems, Eagles Club: VTOL UAV imaging\n'],
+ ['c','2022  '],['m','HPC Student Intern, Applied Innovation Center (MCIT): Slurm, EasyBuild\n'],
+ ['link','#experience','full timeline ↓']],
+skills:[['a','code    '],['m','Python · Bash · C++ · Lua · SQL\n'],['a','devops  '],['m','Docker · Kubernetes · Terraform · Ansible · GitHub Actions · GitLab CI/CD · AWS · GCP\n'],
+ ['a','hpc     '],['m','Slurm · MPI · OpenMP · EasyBuild · Prometheus · Grafana\n'],['a','ai      '],['m','PyTorch · TensorFlow · scikit-learn · OpenCV · TinyML\n'],
+ ['a','data    '],['m','Pandas · NumPy · Power BI · SQL Server']],
+certs:[['m','11 certifications: IBM, Docker, The Linux Foundation, AWS Academy, Cisco and more. '],['link','#certifications','see them ↓']],
+contact:[['link','mailto:algalad.anas@gmail.com','email'],['m','  ·  '],['link','https://www.linkedin.com/in/anas-ayman98','linkedin'],['m','  ·  '],
+ ['link','https://github.com/98-Anas','github'],['m','  ·  '],['link','https://www.youtube.com/@ANAS-CE_CPR','youtube']]
+};
+var busy=false,queue=[];
+function el(cls,txt){var s=document.createElement('span');s.className=cls;s.textContent=txt;return s}
+function scroll(){out.scrollTop=out.scrollHeight}
+function typeInto(node,text,done){if(reduce){node.textContent+=text;done();return}var i=0;(function step(){node.textContent+=text.slice(i,i+2);i+=2;scroll();i<text.length?setTimeout(step,12):done()})()}
+function print(parts,done){var line=document.createElement('div');line.className='line';out.appendChild(line);var k=0;
+ (function next(){if(k>=parts.length){done&&done();return}var pt=parts[k++];
+  if(pt[0]==='link'){var a=document.createElement('a');a.href=pt[1];a.textContent=pt[2];if(pt[1].indexOf('http')===0)a.rel='noopener';line.appendChild(a);next()}
+  else{var s=el(pt[0],'');line.appendChild(s);typeInto(s,pt[1],next)}})()}
+function run(cmd,done){cmd=(cmd||'').trim().toLowerCase();var line=document.createElement('div');line.className='line';
+ line.appendChild(el('p','❯ '));out.appendChild(line);var c=el('c','');line.appendChild(c);
+ typeInto(c,cmd,function(){if(cmd==='clear'){out.innerHTML='';done&&done();return}
+  var r=C[cmd]||[['m','command not found: '+cmd+'. Try '],['a','help']];print(r,function(){out.appendChild(document.createElement('br'));scroll();done&&done()})})}
+function exec(cmd){if(busy){queue.push(cmd);return}busy=true;run(cmd,function(){busy=false;if(queue.length)exec(queue.shift())})}
+['whoami','about','focus','now','galadyas','projects','experience','skills','contact'].forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=function(){exec(n);inp.focus()};hint.appendChild(b)});
+form.addEventListener('submit',function(e){e.preventDefault();var v=inp.value;inp.value='';if(v.trim())exec(v)});
+var started=false;function start(){if(started)return;started=true;exec('whoami');exec('focus');exec('help')}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){start();io.disconnect()}});io.observe(out)}else start();
+})();
+</script>
 <script>
 (function(){if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 var els=document.querySelectorAll('main .card, main .cert, main .job, main .about, main .series');
